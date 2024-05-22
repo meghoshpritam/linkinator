@@ -1,10 +1,13 @@
 {
-  "name": "linkinator",
+  "name": "@meghoshpritam/linkinator",
   "description": "Find broken links, missing images, etc in your HTML. Scurry around your site and find all those broken links.",
-  "version": "0.0.0",
+  "version": "6.0.6",
   "license": "MIT",
-  "repository": "JustinBeckwith/linkinator",
-  "author": "Justin Beckwith",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/meghoshpritam/linkinator.git"
+  },
+  "author": "Pritam",
   "exports": "./build/src/index.js",
   "types": "./build/src/index.d.ts",
   "type": "module",

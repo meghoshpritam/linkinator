@@ -19,7 +19,7 @@ Behold my latest inator! The `linkinator` provides an API and CLI for crawling w
 ## Installation
 
 ```sh
-npm install linkinator
+npm install @meghoshpritam/linkinator
 ```
 
 Not into the whole node.js or npm thing?  You can also download a standalone binary that bundles node, linkinator, and anything else you need.  See [releases](https://github.com/JustinBeckwith/linkinator/releases).
