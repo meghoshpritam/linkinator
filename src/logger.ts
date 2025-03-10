@@ -7,9 +7,9 @@ export enum LogLevel {
 }
 
 export enum Format {
-	TEXT = 0,
-	JSON = 1,
-	CSV = 2,
+	TEXT,
+	JSON,
+	CSV,
 }
 
 export class Logger {

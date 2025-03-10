@@ -1,7 +1,7 @@
 {
   "name": "@meghoshpritam/linkinator",
   "description": "Find broken links, missing images, etc in your HTML. Scurry around your site and find all those broken links.",
-  "version": "6.1.0",
+  "version": "6.1.1",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -15,13 +15,13 @@
     "linkinator": "./build/src/cli.js"
   },
   "scripts": {
-    "pretest": "npm run build",
-    "prepare": "husky && npm run build",
+    "pretest": "npm run compile",
+    "prepare": "npm run compile",
     "coverage": "c8 report --reporter=json",
-    "build": "tsc -p .",
+    "compile": "tsc -p .",
     "test": "c8 mocha build/test",
-    "fix": "biome check --write .",
-    "lint": "biome check .",
+    "fix": "xo --prettier --fix",
+    "lint": "xo --prettier",
     "build-binaries": "pkg . --out-path build/binaries",
     "docs-test": "node build/src/cli.js ./README.md"
   },
@@ -31,29 +31,28 @@
     "gaxios": "^6.0.0",
     "glob": "^10.3.10",
     "htmlparser2": "^9.0.0",
-    "marked": "^13.0.0",
+    "marked": "^10.0.0",
     "meow": "^13.0.0",
     "mime": "^4.0.0",
     "server-destroy": "^1.0.1",
     "srcset": "^5.0.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
     "@types/escape-html": "^1.0.1",
     "@types/mocha": "^10.0.0",
-    "@types/node": "^22.13.10",
+    "@types/node": "^20.0.0",
     "@types/server-destroy": "^1.0.1",
     "@types/sinon": "^17.0.0",
-    "c8": "^10.0.0",
+    "c8": "^9.0.0",
     "execa": "^9.0.0",
-    "husky": "^9.0.11",
-    "mocha": "^11.0.0",
+    "mocha": "^10.0.0",
     "nock": "^13.2.1",
     "pkg": "^5.4.1",
-    "semantic-release": "^24.0.0",
-    "sinon": "^19.0.2",
+    "semantic-release": "^23.0.0",
+    "sinon": "^18.0.0",
     "strip-ansi": "^7.0.1",
-    "typescript": "^5.5.2"
+    "typescript": "^5.0.0",
+    "xo": "^0.58.0"
   },
   "engines": {
     "node": ">=18"
@@ -72,5 +71,15 @@
     "broken",
     "link",
     "checker"
-  ]
+  ],
+  "xo": {
+    "rules": {
+      "unicorn/prefer-event-target": "off",
+      "complexity": "off",
+      "@typescript-eslint/prefer-nullish-coalescing": "off"
+    },
+    "ignores": [
+      "test/fixtures"
+    ]
+  }
 }

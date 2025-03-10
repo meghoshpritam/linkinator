@@ -36,6 +36,7 @@ async function simple() {
 /**
  * This more complex example shows how
  */
+// eslint-disable-next-line no-unused-vars
 async function complex() {
 	// Create a new `LinkChecker` that we'll use to run the scan.
 	const checker = new link.LinkChecker();
