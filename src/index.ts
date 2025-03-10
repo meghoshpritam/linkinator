@@ -34,7 +34,6 @@ export type LinkResult = {
   state: LinkState;
   parent?: string;
   failureDetails?: Array<Error | GaxiosResponse>;
-  _original_url: string;
 };
 
 export type CrawlResult = {
@@ -187,7 +186,6 @@ export class LinkChecker extends EventEmitter {
         status: 0,
         state: LinkState.SKIPPED,
         parent: mapUrl(options.parent, options.checkOptions),
-        _original_url: options.url.href,
       };
       options.results.push(r);
       this.emit("link", r);
@@ -203,7 +201,6 @@ export class LinkChecker extends EventEmitter {
         url: mapUrl(options.url.href, options.checkOptions),
         state: LinkState.SKIPPED,
         parent: options.parent,
-        _original_url: options.url.href,
       };
       options.results.push(result);
       this.emit("link", result);
@@ -223,7 +220,6 @@ export class LinkChecker extends EventEmitter {
           url: mapUrl(options.url.href, options.checkOptions),
           state: LinkState.SKIPPED,
           parent: mapUrl(options.parent, options.checkOptions),
-          _original_url: options.url.href,
         };
         options.results.push(result);
         this.emit("link", result);
@@ -336,7 +332,6 @@ export class LinkChecker extends EventEmitter {
       state,
       parent: mapUrl(options.parent, options.checkOptions),
       failureDetails: failures,
-      _original_url: options.url.href,
     };
     options.results.push(result);
     this.emit("link", result);
@@ -356,7 +351,6 @@ export class LinkChecker extends EventEmitter {
             status: 0,
             state: LinkState.BROKEN,
             parent: mapUrl(options.url.href, options.checkOptions),
-            _original_url: result.link,
           };
           options.results.push(r);
           this.emit("link", r);
