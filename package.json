@@ -1,7 +1,7 @@
 {
   "name": "@meghoshpritam/linkinator",
   "description": "Find broken links, missing images, etc in your HTML. Scurry around your site and find all those broken links.",
-  "version": "6.0.6",
+  "version": "6.1.0",
   "license": "MIT",
   "repository": {
     "type": "git",
@@ -13,17 +13,6 @@
   "type": "module",
   "bin": {
     "linkinator": "./build/src/cli.js"
-  },
-  "scripts": {
-    "pretest": "npm run compile",
-    "prepare": "npm run compile",
-    "coverage": "c8 report --reporter=json",
-    "compile": "tsc -p .",
-    "test": "c8 mocha build/test",
-    "fix": "xo --prettier --fix",
-    "lint": "xo --prettier",
-    "build-binaries": "pkg . --out-path build/binaries",
-    "docs-test": "node build/src/cli.js ./README.md"
   },
   "scripts": {
     "pretest": "npm run build",
@@ -52,7 +41,7 @@
     "@biomejs/biome": "1.9.4",
     "@types/escape-html": "^1.0.1",
     "@types/mocha": "^10.0.0",
-    "@types/node": "^22.0.0",
+    "@types/node": "^22.13.10",
     "@types/server-destroy": "^1.0.1",
     "@types/sinon": "^17.0.0",
     "c8": "^10.0.0",
